@@ -315,7 +315,7 @@ func NewGenClusterConfigCommand(pathOpts *clientcmd.PathOptions) *cobra.Command 
 			if clusterOpts.Name != "" {
 				contextName = clusterOpts.Name
 			}
-			clst := cmdutil.NewCluster(contextName, clusterOpts.Namespaces, conf, bearerToken, awsAuthConf, execProviderConf)
+			clst := cmdutil.NewCluster(contextName, clusterOpts.Namespaces, clusterOpts.ClusterResources, conf, bearerToken, awsAuthConf, execProviderConf)
 			if clusterOpts.InCluster {
 				clst.Server = argoappv1.KubernetesInternalAPIServerAddr
 			}
